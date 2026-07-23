@@ -1,0 +1,11 @@
+{
+  "name": "Remix: sgu-university-erp",
+  "description": "An intelligent integrated university management system for students, registrars, and executives.",
+  "requestFramePermissions": [
+    "camera",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

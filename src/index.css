@@ -1,0 +1,154 @@
+@import "tailwindcss";
+
+:root {
+  --bg-page: #f8fafc;        /* Page Background (soft clean off-white) */
+  --bg-card: #ffffff;        /* Card & Panel Backgrounds (pure crisp white) */
+  --bg-card-sub: #f1f5f9;    /* Soft card/accent background */
+  --border-default: #e2e8f0; /* Default outline & border lines */
+  --border-hover: #cbd5e1;   /* Hover state borders */
+  --border-muted: #94a3b8;   /* Secondary line decorations */
+  
+  /* Text Remappings to readable navy & dark slate */
+  --text-heading: #1e3a8a;   /* SGU Dark Blue for primary headings */
+  --text-body: #0f172a;      /* Main high contrast body copy */
+  --text-secondary: #27272a; /* Secondary paragraph copy */
+  --text-muted: #52525b;     /* Info text & icons color */
+  --text-muted-darker: #71717a;
+  
+  /* SGU Primary Blue, Sky Blue, and alert colors mapped for accessibility */
+  --color-emerald-400: #1e3a8a; /* Academic status text and outlines */
+  --color-emerald-500: #0284c7; /* SGU Sky Blue highlight */
+  --color-emerald-600: #1e3a8a; /* Primary CTA Action (Dark Blue) */
+  --color-emerald-350: #10b981; /* Standard success alert green */
+  --color-emerald-900: #dbeafe; /* Light sky blue line alerts */
+  --color-emerald-950: #eff6ff; /* Soft sky blue filling alerts */
+
+  /* Secondary blue accents */
+  --color-teal-400: #0284c7;
+  --color-teal-800: #0369a1;
+  --color-teal-950: #f0f9ff;
+  
+  /* Amber / Warning boxes */
+  --color-amber-400: #b45309;
+  --color-amber-950: #fffbeb;
+  --color-amber-900: #fef3c7;
+
+  /* Red / Rose warnings converted to accessible light layouts */
+  --color-rose-350: #dc2626; /* Crimson text */
+  --color-rose-300: #b91c1c;
+  --color-rose-950: #fef2f2; /* Rose warm backdrop */
+  --color-rose-900: #fee2e2; /* Rose border outline */
+}
+
+:root.dark {
+  --bg-page: #030712;        /* Dark mode deep space background */
+  --bg-card: #0b0f19;        /* Deep obsidian card fill */
+  --bg-card-sub: #111827;    /* Slate-900 inner accents */
+  --border-default: #1f2937; /* Clean borders in dark mode */
+  --border-hover: #374151;   /* Hover highlight borders */
+  --border-muted: #4b5563;   /* Muted visual elements */
+  
+  /* Ambient glowing text colors */
+  --text-heading: #f9fafb;   /* Off-white high contrast headings */
+  --text-body: #f3f4f6;      /* Off-white body copy */
+  --text-secondary: #d1d5db; /* Gray-300 readable text */
+  --text-muted: #9ca3af;     /* Gray-400 secondary info */
+  --text-muted-darker: #6b7280;
+  
+  /* Rich neon/emerald/sky-blue overlays for high tech dark mode */
+  --color-emerald-400: #34d399; /* Futuristic neon emerald text */
+  --color-emerald-500: #10b981; /* SGU bright brand cyan/green */
+  --color-emerald-600: #059669; /* Rich academic green fill */
+  --color-emerald-350: #10b981;
+  --color-emerald-900: #064e3b; /* Deep background highlight */
+  --color-emerald-950: #022c22; /* Dark ambient room fill */
+
+  /* Secondary dark accents */
+  --color-teal-400: #2dd4bf;
+  --color-teal-800: #115e59;
+  --color-teal-950: #134e4a;
+  
+  /* Amber / warnings */
+  --color-amber-400: #f59e0b;
+  --color-amber-950: #451a03;
+  --color-amber-900: #78350f;
+
+  /* Rose alerts */
+  --color-rose-350: #f87171;
+  --color-rose-300: #ef4444;
+  --color-rose-950: #4c0519;
+  --color-rose-900: #881337;
+}
+
+@theme {
+  --color-slate-950: var(--bg-page);
+  --color-slate-900: var(--bg-card);
+  --color-slate-850: var(--bg-card-sub);
+  --color-slate-800: var(--border-default);
+  --color-slate-700: var(--border-hover);
+  --color-slate-600: var(--border-muted);
+  
+  --color-slate-100: var(--text-heading);
+  --color-slate-200: var(--text-body);
+  --color-slate-300: var(--text-secondary);
+  --color-slate-400: var(--text-muted);
+  --color-slate-500: var(--text-muted-darker);
+  --color-slate-705: var(--text-muted);
+  
+  /* Inject the variables directly */
+  --color-emerald-400: var(--color-emerald-400);
+  --color-emerald-500: var(--color-emerald-500);
+  --color-emerald-600: var(--color-emerald-600);
+  --color-emerald-350: var(--color-emerald-350);
+  --color-emerald-900: var(--color-emerald-900);
+  --color-emerald-950: var(--color-emerald-950);
+
+  --color-teal-400: var(--color-teal-400);
+  --color-teal-800: var(--color-teal-800);
+  --color-teal-950: var(--color-teal-950);
+  
+  --color-amber-400: var(--color-amber-400);
+  --color-amber-950: var(--color-amber-950);
+  --color-amber-900: var(--color-amber-900);
+
+  --color-rose-350: var(--color-rose-350);
+  --color-rose-300: var(--color-rose-300);
+  --color-rose-950: var(--color-rose-950);
+  --color-rose-900: var(--color-rose-900);
+  
+  --color-neutral-300: var(--text-secondary);
+}
+
+/* Ensure global accessibility on custom inputs and buttons */
+input, select {
+  color: var(--text-body) !important;
+  background-color: var(--bg-card) !important;
+  border-color: var(--border-default) !important;
+}
+
+/* Specific background adjustment for buttons containing dark text */
+button.bg-emerald-600 {
+  color: #ffffff !important;
+}
+
+button.bg-teal-600 {
+  color: #ffffff !important;
+}
+
+button.bg-rose-950 {
+  background-color: var(--color-rose-950) !important;
+  color: var(--color-rose-350) !important;
+}
+
+/* Smooth out the chart visibility for dynamic themes */
+.recharts-text {
+  fill: var(--text-muted) !important;
+}
+
+/* Dynamic alignment class mapping for LTR English mode */
+html[dir="ltr"] .text-right {
+  text-align: left !important;
+}
+html[dir="ltr"] .text-left {
+  text-align: right !important;
+}
